@@ -135,3 +135,27 @@ body{width:100%;min-width:280px}
   .header nav.open{padding-block:70px;overflow-y:auto}
   .lightbox-stage{height:72vh}
 }
+
+footer .identity img{filter:none;background:var(--paper);border-radius:50%;padding:6px;width:58px;height:58px;object-fit:contain;object-position:center;display:block}
+
+/* Horarios de invierno y verano */
+.schedule{grid-template-columns:30% 66%;gap:4%;padding-inline:6vw}
+.schedule-box{padding:0 26px 28px}
+.season-tabs{display:grid;grid-template-columns:1fr 1fr;margin:0 -26px 20px}
+.season-tabs button{border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;padding:20px;cursor:pointer;font:500 18px "DM Sans",sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);transition:.25s}
+.season-tabs button:last-child{border-right:0}
+.season-tabs button small{display:block;font-size:9px;letter-spacing:.18em;margin-top:4px}
+.season-tabs button[aria-selected="true"]{background:var(--wine);color:#fff}
+.season-panel{animation:seasonIn .35s ease}
+.schedule-table{display:grid;grid-template-columns:minmax(125px,.8fr) repeat(2,minmax(165px,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+.schedule-table>*{min-height:62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.schedule-table .table-head{min-height:72px;color:var(--wine);font-size:17px;font-weight:600;text-transform:uppercase;flex-direction:column}
+.schedule-table .table-head small{font-size:9px;letter-spacing:.14em;margin-top:3px}
+.schedule-table time{font-size:15px;font-weight:600}
+.schedule-table>span{font-size:12px;font-weight:600;text-transform:uppercase}
+.summer-dates{text-align:center;margin:0 0 18px;color:var(--wine);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.summer-dates span{margin:0 10px}
+.schedule-note{display:block;margin:18px 0 28px!important}
+@keyframes seasonIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:1050px) and (min-width:851px){.schedule{grid-template-columns:1fr;padding-inline:8vw}.schedule-title{margin-bottom:45px}}
+@media(max-width:650px){.schedule-box{padding:0 12px 20px}.season-tabs{margin-inline:-12px}.season-tabs button{font-size:15px;padding:17px 8px}.schedule-table{grid-template-columns:82px repeat(2,minmax(0,1fr))}.schedule-table>*{min-height:58px;padding:7px 3px}.schedule-table .table-head{font-size:12px;min-height:64px}.schedule-table time{font-size:11px}.schedule-table>span{font-size:9px;word-break:break-word}.summer-dates{font-size:10px;line-height:1.6}.summer-dates span{display:block;height:0;visibility:hidden}}

@@ -104,3 +104,19 @@ document.addEventListener('keydown', event => {
   if (event.key === 'ArrowLeft') showGalleryImage(currentImage - 1);
   if (event.key === 'ArrowRight') showGalleryImage(currentImage + 1);
 });
+
+const seasonButtons = [...document.querySelectorAll('[data-season]')];
+const seasonPanels = [...document.querySelectorAll('[data-panel]')];
+function selectSeason(season) {
+  seasonButtons.forEach(button => button.setAttribute('aria-selected', String(button.dataset.season === season)));
+  seasonPanels.forEach(panel => {
+    const selected = panel.dataset.panel === season;
+    panel.hidden = !selected;
+    panel.classList.toggle('active', selected);
+  });
+}
+seasonButtons.forEach(button => button.addEventListener('click', () => selectSeason(button.dataset.season)));
+const today = new Date();
+const monthDay = (today.getMonth() + 1) * 100 + today.getDate();
+const isSummerSchedule = (monthDay >= 623 && monthDay <= 730) || (monthDay >= 901 && monthDay <= 917);
+selectSeason(isSummerSchedule ? 'summer' : 'winter');
