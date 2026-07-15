@@ -159,3 +159,7 @@ footer .identity img{filter:none;background:var(--paper);border-radius:50%;paddi
 @keyframes seasonIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(max-width:1050px) and (min-width:851px){.schedule{grid-template-columns:1fr;padding-inline:8vw}.schedule-title{margin-bottom:45px}}
 @media(max-width:650px){.schedule-box{padding:0 12px 20px}.season-tabs{margin-inline:-12px}.season-tabs button{font-size:15px;padding:17px 8px}.schedule-table{grid-template-columns:82px repeat(2,minmax(0,1fr))}.schedule-table>*{min-height:58px;padding:7px 3px}.schedule-table .table-head{font-size:12px;min-height:64px}.schedule-table time{font-size:11px}.schedule-table>span{font-size:9px;word-break:break-word}.summer-dates{font-size:10px;line-height:1.6}.summer-dates span{display:block;height:0;visibility:hidden}}
+
+/* Mostrar la corrección de color original de las fotografías */
+.hero-image img,.about-photo img,.movement-image img,.studio-gallery img,.studio-strip img{filter:none}
+.studio-gallery figure:hover img{filter:none}
